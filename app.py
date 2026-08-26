@@ -73,6 +73,7 @@ if uploaded_file is not None:
                 ]
                 
                 # Auto-select gemini-2.5-flash if available, otherwise pick the first valid model
+                # Gemini 1.5,2.0 & 2.5 wasn't working properly, so I have added gemini-3.6-flash
                 target_model = next((m for m in available_models if "gemini-3.6-flash" in m), available_models[0])
                 
                 model = genai.GenerativeModel(target_model)
