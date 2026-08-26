@@ -94,37 +94,4 @@ if uploaded_file is not None:
             except Exception as e:
                 st.error(f"Error calling Gemini API: {e}")
 
-    # # 4. AI Summary using Google Gemini
-    # st.subheader("🤖 AI Executive Summary")
     
-    # api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
-
-    # if not api_key:
-    #     api_key = st.text_input("Enter Gemini API Key (Fallback)", type="password")
-
-    # if st.button("Generate AI Insights"):
-    #     if not api_key:
-    #         st.error("Please provide a Gemini API Key.")
-    #     else:
-    #         os.environ["GEMINI_API_KEY"] = api_key
-            
-    #         prompt = f"""
-    #         Summarize this dataset for an executive:
-    #         - Shape: {df.shape[0]} rows, {df.shape[1]} columns
-    #         - Quality Flags: {', '.join(alerts) if alerts else 'None'}
-    #         - Columns & Types: {dict(df.dtypes.astype(str))}
-    #         - Sample Data:
-    #         {df.head(3).to_string()}
-            
-    #         Provide 3 sections: 1. Core Overview, 2. Major Risks/Quality Issues, 3. Suggested Next Steps.
-    #         """
-            
-    #         with st.spinner("Analyzing dataset with Gemini..."):
-    #             try:
-    #                 response = completion(
-    #                     model="gemini/gemini-pro",
-    #                     messages=[{"role": "user", "content": prompt}]
-    #                 )
-    #                 st.markdown(response.choices[0].message.content)
-    #             except Exception as e:
-    #                 st.error(f"Error calling Gemini API: {e}")
